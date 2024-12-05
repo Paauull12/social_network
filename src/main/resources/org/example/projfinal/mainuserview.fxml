@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="584.0" prefWidth="886.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.projfinal.controller.userViews.MainUserView">
+    <children>
+        <SplitPane orientation="VERTICAL" prefHeight="584.0" prefWidth="886.0">
+            <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="596.0" prefWidth="896.0">
+                    <children>
+                        <ImageView fitHeight="68.0" fitWidth="89.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" />
+                        <TabPane layoutY="7.0" prefHeight="575.0" prefWidth="886.0" tabClosingPolicy="UNAVAILABLE">
+                            <tabs>
+                                <!-- General Tab -->
+                                <Tab text="General">
+                                    <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                            <children>
+                                                <Label layoutX="20.0" layoutY="20.0" text="Username:" />
+                                                <Label fx:id="usernameShowLabel" layoutX="150.0" layoutY="20.0" prefHeight="16.0" prefWidth="143.0" text=" " />
+                                                <Label layoutX="20.0" layoutY="60.0" text="Real Name:" />
+                                                <Label fx:id="realnameShowLabel" layoutX="150.0" layoutY="60.0" prefHeight="16.0" prefWidth="134.0" text=" " />
+                                                <Label layoutX="20.0" layoutY="120.0" style="-fx-font-weight: bold;" text="All Our Users" />
+                                                <ListView fx:id="userList" layoutX="20.0" layoutY="150.0" prefHeight="150.0" prefWidth="855.0" />
+                                                <Button fx:id="generalPrev" layoutX="20.0" layoutY="320.0" prefHeight="26.0" prefWidth="222.0" text="Prev" />
+                                                <Button fx:id="generalNext" layoutX="625.0" layoutY="320.0" prefHeight="26.0" prefWidth="247.0" text="Next" />
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </Tab>
+
+                                <!-- Friends Tab -->
+                                <Tab text="Friends">
+                                    <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="537.0" prefWidth="883.0">
+                                            <children>
+                                                <Label layoutX="20.0" layoutY="10.0" style="-fx-font-weight: bold;" text="Friends:" />
+                                                <ListView fx:id="friendsList" layoutX="20.0" layoutY="30.0" prefHeight="318.0" prefWidth="300.0" />
+
+                                                <Label layoutX="554.0" layoutY="10.0" style="-fx-font-weight: bold;" text="Potential Friends:" />
+                                                <ListView fx:id="potentialFriendsList" layoutX="554.0" layoutY="31.0" prefHeight="318.0" prefWidth="300.0" />
+
+                                                <Label fx:id="countFriendsRequests" layoutX="350.0" layoutY="384.0" text="You have:" />
+                                                <Button fx:id="goToFriendRequests" layoutX="318.0" layoutY="411.0" onAction="#pressGoToFriendRequests" prefWidth="250.0" text="Check Friend Requests" />
+                                    <Button fx:id="addFriendButton" layoutX="739.0" layoutY="419.0" mnemonicParsing="false" onAction="#pressAddFriendButton" prefHeight="37.0" prefWidth="115.0" text="Add Friend" />
+                                    <Button fx:id="deleteFriendButton" layoutX="27.0" layoutY="424.0" mnemonicParsing="false" onAction="#pressDeleteFriendButton" prefHeight="35.0" prefWidth="121.0" text="Delete Friend" />
+                                    <Button fx:id="startChatWithFriend" layoutX="157.0" layoutY="424.0" mnemonicParsing="false" onAction="#pressStartChatWithFriend" prefHeight="36.0" prefWidth="89.0" text="Start Chat" />
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </Tab>
+
+                                <!-- Chat Tab -->
+                                <Tab text="Chat">
+                                    <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                            <children>
+                                                <!-- List for all chats -->
+                                                <ListView fx:id="chatListView" layoutX="20.0" layoutY="21.0" prefHeight="442.0" prefWidth="200.0" />
+
+                                                <!-- Panel to display messages -->
+                                                <ScrollPane fx:id="messageScrollPane" layoutX="245.0" layoutY="21.0" prefHeight="365.0" prefWidth="620.0">
+                                                    <content>
+                                                        <VBox fx:id="messagePanel" spacing="10.0" />
+                                                    </content>
+                                                </ScrollPane>
+
+                                                <!-- Message input field -->
+                                                <TextArea fx:id="messageInput" layoutX="245.0" layoutY="403.0" prefHeight="60.0" prefWidth="500.0" promptText="Type your message here..." />
+
+                                                <!-- Send button -->
+                                                <Button fx:id="sendButton" layoutX="772.0" layoutY="403.0" onAction="#pressSendButton" prefHeight="60.0" prefWidth="100.0" text="Send" />
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </Tab>
+
+
+                                <!-- Account Settings Tab -->
+                                <Tab text="Account Settings">
+                                    <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #f4f4f4;">
+                                            <children>
+                                                <!-- Title -->
+                                                <Label layoutX="50.0" layoutY="30.0" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #333;" text="Update Account Information" />
+
+                                                <!-- Labels and Input Fields -->
+                                                <Label layoutX="50.0" layoutY="85.0" text="Username:" />
+                                                <TextField fx:id="usernameField" layoutX="180.0" layoutY="80.0" prefWidth="200.0" />
+                                                <CheckBox fx:id="usernameUpdate" layoutX="400.0" layoutY="85.0" mnemonicParsing="false" text="Update" />
+
+                                                <Label layoutX="50.0" layoutY="135.0" text="Real Name:" />
+                                                <TextField fx:id="realNameField" layoutX="180.0" layoutY="130.0" prefWidth="200.0" />
+                                                <CheckBox fx:id="realNameUpdate" layoutX="400.0" layoutY="135.0" mnemonicParsing="false" text="Update" />
+
+                                                <Label layoutX="50.0" layoutY="185.0" text="Old Password:" />
+                                                <TextField fx:id="oldPasswordField" layoutX="180.0" layoutY="180.0" prefWidth="200.0" />
+
+                                                <Label layoutX="50.0" layoutY="235.0" text="New Password:" />
+                                                <TextField fx:id="newPasswordField" layoutX="180.0" layoutY="230.0" prefWidth="200.0" />
+                                                <CheckBox fx:id="passwordUpdate" layoutX="400.0" layoutY="235.0" mnemonicParsing="false" text="Update" />
+
+                                                <Label layoutX="50.0" layoutY="285.0" text="Confirm Password:" />
+                                                <TextField fx:id="confirmPasswordField" layoutX="180.0" layoutY="280.0" prefWidth="200.0" />
+
+                                                <!-- Update Button -->
+                                                <Button fx:id="updateInfoButton" layoutX="180.0" layoutY="350.0" onAction="#pressUpdateInfoButton" prefWidth="200.0" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 5;" text="Update Information" />
+                                    <Button fx:id="updateInfoButton1" layoutX="180.0" layoutY="402.0" onAction="#pressDeleteAccountButton" prefWidth="200.0" style="-fx-background-color: #FF0000; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 5;" text="Delete Account" />
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </Tab>
+
+                            </tabs>
+                        </TabPane>
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+    </children>
+</AnchorPane>

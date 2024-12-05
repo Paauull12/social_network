@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="467.0" prefWidth="594.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.projfinal.controller.AuthWindow">
+    <children>
+        <TabPane layoutX="14.0" layoutY="14.0" prefHeight="426.0" prefWidth="564.0" style="-fx-tab-min-width: 280px; -fx-tab-max-width: 280px; -fx-tab-max-height: 30px;                         -fx-control-inner-background: #f0f0f0;                         -fx-tab-header-area-visible: true;                         -fx-tab-header-background: white;                         -fx-padding: -1;                         -fx-tab-header-padding: 0;                         -fx-tab-header-background-insets: 0, 0, 1, 0;                         -fx-control-buttons-tab: collapse;" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab fx:id="loginPage" text="Login">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <SplitPane dividerPositions="0.29797979797979796" layoutX="10.0" prefHeight="395.0" prefWidth="555.0">
+                                    <items>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                            <children>
+                                                <ImageView fx:id="loginImageView" fitHeight="380.0" fitWidth="159.0" layoutX="2.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" styleClass="image-view" />
+                                            </children>
+                                        </AnchorPane>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                            <children>
+                                                <TextField fx:id="loginUsernameField" layoutX="144.0" layoutY="184.0" promptText="Enter your username" />
+                                                <PasswordField fx:id="loginPasswordField" layoutX="144.0" layoutY="239.0" promptText="Enter your password" />
+                                                <Button fx:id="loginButton" layoutX="148.0" layoutY="305.0" mnemonicParsing="false" onAction="#loginButtonPress" prefHeight="36.0" prefWidth="166.0" text="Login" />
+                                                <Label layoutX="33.0" layoutY="189.0" prefHeight="16.0" prefWidth="102.0" text="Username" />
+                                                <Label layoutX="33.0" layoutY="244.0" prefHeight="16.0" prefWidth="102.0" text="Password" />
+                                                <Label layoutX="39.0" layoutY="81.0" prefHeight="65.0" prefWidth="340.0" styleClass="title-label" text="Login to the SocialNetwork" />
+                                                <Label fx:id="errorLabel" layoutX="33.0" layoutY="128.0" prefHeight="16.0" prefWidth="335.0" text="  " textFill="#c60606" />
+                                            </children>
+                                        </AnchorPane>
+                                    </items>
+                                </SplitPane>
+                            </children></AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="signupPage" text="Signup">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="246.0" prefWidth="316.0">
+                            <children>
+                                <SplitPane dividerPositions="0.7140287769784173" layoutX="6.0" layoutY="7.0" prefHeight="387.0" prefWidth="558.0">
+                                    <items>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                            <children>
+                                                <Button fx:id="signupButton" layoutX="114.0" layoutY="259.0" mnemonicParsing="false" onAction="#signupButtonPress" prefHeight="36.0" prefWidth="195.0" text="Signup" />
+                                                <TextField fx:id="signupUsernameField" layoutX="146.0" layoutY="83.0" promptText="Choose a username" />
+                                                <TextField fx:id="signupRealNameField" layoutX="146.0" layoutY="139.0" promptText="Enter your real name" />
+                                                <TextField fx:id="signupPasswordField" layoutX="146.0" layoutY="191.0" promptText="Create a password" />
+                                                <Label layoutX="20.0" layoutY="90.0" prefHeight="21.0" prefWidth="108.0" text="Username" />
+                                                <Label layoutX="20.0" layoutY="146.0" prefHeight="19.0" prefWidth="107.0" text="Real Name" />
+                                                <Label layoutX="20.0" layoutY="198.0" prefHeight="21.0" prefWidth="112.0" text="Password" />
+                                                <Label layoutX="27.0" layoutY="26.0" prefHeight="37.0" prefWidth="347.0" styleClass="title-label" text="SignUp for our Social Network" />
+                                            </children>
+                                        </AnchorPane>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                            <children>
+                                                <ImageView fx:id="signupImageView" fitHeight="385.0" fitWidth="155.0" pickOnBounds="true" preserveRatio="true" styleClass="image-view" />
+                                            </children>
+                                        </AnchorPane>
+                                    </items>
+                                </SplitPane>
+                            </children></AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>
